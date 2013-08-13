@@ -3,7 +3,7 @@
 
 	include 'WideImage/WideImage.php';
 	
-	$jpgQ = 70;
+	$jpgQ = 80;
 	$pngQ = 6;
 	
 	$srcDir = 'src/';
@@ -34,12 +34,12 @@
 	if($cropH){
 		$targetW = ($targetW) ? $targetW : $srcW;
 		$targetH = ($targetH) ? $targetH : floor($targetW / $targetR);
-		$offset = round((($srcH * $targetW / $srcW) - $targetH) * ($focalY / 100));
+		$offset = floor((($srcH * $targetW / $srcW) - $targetH) * ($focalY / 100));
 		$image = $image->resize($targetW,null)->crop(0,$offset,$targetW,$targetH);
 	} else {
 		$targetH = ($targetH) ? $targetH : $srcH;
 		$targetW = ($targetW) ? $targetW : floor($targetH * $targetR);
-		$offset = round((($srcW * $targetH / $srcH) - $targetW) * ($focalX / 100));
+		$offset = floor((($srcW * $targetH / $srcH) - $targetW) * ($focalX / 100));
 		$image = $image->resize(null,$targetH)->crop($offset,0,$targetW,$targetH);
 	}
 	

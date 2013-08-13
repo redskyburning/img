@@ -28,7 +28,7 @@
 			function image($file,$w,$h,$x = 50,$y = 50){
 				$parts = explode('/',$file);
 				$local = $parts[count($parts) - 1];
-				return '<img class="product-img" src="trans/'.$w.'x'.$h.'.png" width="'.$w.'" height="'.$h.'" data-orig="'.$local.'" data-fX="'.$x.'" data-fY="'.$y.'" />';
+				return '<img class="product-img img-unloaded" src="trans/'.$w.'x'.$h.'.png" width="'.$w.'" height="'.$h.'" data-orig="'.$local.'" data-fX="'.$x.'" data-fY="'.$y.'" />';
 			}
 			
 			
@@ -42,12 +42,18 @@
 					<div class="item-image">
 						<?= image($item->images[0],3,3,0,100) ?>
 					</div>
-					<!-- <div class="item-description">
+					<!--<div class="item-description">
 						<?= $item->title ?>
-					</div> -->
+					</div>-->
 				</div><?php endforeach ?>
-			
+				
 		</div>
+		<!--<div id="item-detail">
+			<div id="detail-fader">&nbsp;</div>
+			<div id="detail-body">
+				<p>At a signal from Dak Kova the doors of two cages were thrown open and a dozen green Martian females were driven to the center of the arena. Each was given a dagger and then, at the far end, a pack of twelve calots, or wild dogs were loosed upon them.</p>
+			</div>
+		</div>-->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
